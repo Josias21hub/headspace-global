@@ -105,24 +105,6 @@ export function HomeScreen({ t, selectedLanguage, region, onNavigate }: HomeScre
               >
                 {t.home.library}
               </Button>
-              <a href="/workout">
-                <Button 
-                  variant="ghost"
-                  size="sm"
-                  className="text-gray-600 hover:text-[#4CB09A]"
-                >
-                  💪 Treinos
-                </Button>
-              </a>
-              <a href="/progress">
-                <Button 
-                  variant="ghost"
-                  size="sm"
-                  className="text-gray-600 hover:text-[#4CB09A]"
-                >
-                  📊 Progresso
-                </Button>
-              </a>
               <Button 
                 onClick={() => onNavigate("premium")}
                 size="sm"

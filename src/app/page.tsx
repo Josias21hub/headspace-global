@@ -7,12 +7,10 @@ import { getTranslation } from "@/lib/i18n";
 import { WelcomeScreen } from "./components/WelcomeScreen";
 import { CheckinScreen } from "./components/CheckinScreen";
 import { HomeScreen } from "./components/HomeScreen";
-import { LibraryScreen } from "./components/LibraryScreen";
-import { PremiumScreen } from "./components/PremiumScreen";
 
 export default function ZenoraApp() {
   const [selectedLanguage, setSelectedLanguage] = useState<Language>("en");
-  const [currentScreen, setCurrentScreen] = useState<"welcome" | "checkin" | "home" | "library" | "premium">("welcome");
+  const [currentScreen, setCurrentScreen] = useState<"welcome" | "checkin" | "home">("welcome");
   const [selectedMood, setSelectedMood] = useState<string | null>(null);
   const [region, setRegion] = useState<Region>("US");
 
@@ -52,25 +50,6 @@ export default function ZenoraApp() {
         selectedLanguage={selectedLanguage}
         region={region}
         onNavigate={setCurrentScreen}
-      />
-    );
-  }
-
-  if (currentScreen === "library") {
-    return (
-      <LibraryScreen
-        t={t}
-        onBack={() => setCurrentScreen("home")}
-      />
-    );
-  }
-
-  if (currentScreen === "premium") {
-    return (
-      <PremiumScreen
-        t={t}
-        region={region}
-        onBack={() => setCurrentScreen("home")}
       />
     );
   }
